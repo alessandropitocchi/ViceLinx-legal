@@ -1,0 +1,523 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/x-icon" href="favicon.ico">
+    <title>ViceLinx - Ask, Advise, Connect</title>
+    <meta name="description" content="Join the beta of ViceLinx - your platform for trusted advice and meaningful connections.">
+    
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://vicelinx.app/">
+    <meta property="og:title" content="ViceLinx - Ask, Advise, Connect">
+    <meta property="og:description" content="Join the beta of ViceLinx - your platform for trusted advice and meaningful connections.">
+    
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background: #fff;
+        }
+        
+        .container {
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        /* Header */
+        header {
+            background: #fff;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.05);
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+        }
+        
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1rem 0;
+        }
+        
+        .logo {
+            display: flex;
+            align-items: center;
+            font-size: 2rem;
+            font-weight: 300;
+            color: #000;
+            text-decoration: none;
+            letter-spacing: 2px;
+        }
+
+        a.button {
+            text-decoration: none;
+            padding: 1px 6px;
+            border: 1px outset buttonborder;
+            border-radius: 3px;
+            color: buttontext;
+            background-color: buttonface;
+            text-decoration: none;
+        }
+                
+        .logo .accent {
+            font-weight: 700;
+        }
+        
+        .nav-links {
+            display: flex;
+            gap: 2rem;
+            list-style: none;
+        }
+        
+        .nav-links a {
+            text-decoration: none;
+            color: #666;
+            font-weight: 500;
+            transition: color 0.3s ease;
+        }
+        
+        .nav-links a:hover {
+            color: #000;
+        }
+        
+        .beta-button {
+            background: #000;
+            color: #fff;
+            padding: 10px 20px;
+            border-radius: 6px;
+            text-decoration: none;
+            font-weight: 500;
+            font-size: 0.9rem;
+            transition: all 0.3s ease;
+        }
+        
+        .beta-button:hover {
+            background: #333;
+            transform: translateY(-1px);
+        }
+        
+        /* Hero Section */
+        .hero {
+            padding: 140px 0 100px;
+            text-align: center;
+            background: #fff;
+        }
+        
+        .hero h1 {
+            font-size: 4rem;
+            font-weight: 300;
+            margin-bottom: 1.5rem;
+            color: #000;
+            letter-spacing: -1px;
+        }
+        
+        .hero .tagline {
+            font-size: 1.4rem;
+            margin-bottom: 3rem;
+            color: #666;
+            font-weight: 300;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        
+        .hero-cta {
+            background: #000;
+            color: #fff;
+            padding: 16px 32px;
+            border-radius: 6px;
+            text-decoration: none;
+            font-weight: 500;
+            font-size: 1.1rem;
+            display: inline-block;
+            transition: all 0.3s ease;
+        }
+        
+        .hero-cta:hover {
+            background: #333;
+            transform: translateY(-2px);
+        }
+        
+        .beta-note {
+            margin-top: 1.5rem;
+            color: #999;
+            font-size: 0.9rem;
+        }
+        
+        /* Features Section */
+        .features {
+            padding: 100px 0;
+            background: #fafafa;
+        }
+        
+        .section-title {
+            text-align: center;
+            font-size: 2.5rem;
+            font-weight: 300;
+            margin-bottom: 4rem;
+            color: #000;
+            letter-spacing: -1px;
+        }
+        
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 3rem;
+        }
+        
+        .feature-card {
+            background: #fff;
+            padding: 2.5rem;
+            border-radius: 8px;
+            text-align: center;
+            border: 1px solid #eee;
+            transition: all 0.3s ease;
+        }
+        
+        .feature-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+        }
+        
+        .feature-icon {
+            font-size: 3rem;
+            margin-bottom: 1.5rem;
+            display: block;
+        }
+        
+        .feature-card h3 {
+            font-size: 1.3rem;
+            margin-bottom: 1rem;
+            color: #000;
+            font-weight: 500;
+        }
+        
+        .feature-card p {
+            color: #666;
+            line-height: 1.6;
+            font-size: 0.95rem;
+        }
+        
+        /* Beta CTA Section */
+        .beta-cta {
+            padding: 100px 0;
+            background: #000;
+            color: #fff;
+            text-align: center;
+        }
+        
+        .beta-cta h2 {
+            font-size: 2.5rem;
+            font-weight: 300;
+            margin-bottom: 1rem;
+            letter-spacing: -1px;
+        }
+        
+        .beta-cta p {
+            font-size: 1.2rem;
+            margin-bottom: 2.5rem;
+            color: #ccc;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        
+        .beta-form {
+            max-width: 400px;
+            margin: 0 auto;
+            display: flex;
+            gap: 1rem;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+        
+        .beta-input {
+            flex: 1;
+            min-width: 250px;
+            padding: 14px 16px;
+            border: 1px solid #333;
+            border-radius: 6px;
+            background: #fff;
+            font-size: 1rem;
+            outline: none;
+        }
+        
+        .beta-submit {
+            background: #fff;
+            color: #000;
+            padding: 14px 24px;
+            border: none;
+            border-radius: 6px;
+            font-weight: 500;
+            cursor: pointer;
+            text-decoration: none;
+            transition: all 0.3s ease;
+        }
+        
+        .beta-submit:hover {
+            background: #f0f0f0;
+            transform: translateY(-1px);
+        }
+        
+        .beta-success {
+            background: #2a9d8f;
+            color: #fff;
+            padding: 1rem;
+            border-radius: 6px;
+            margin-top: 1rem;
+            display: none;
+        }
+        
+        /* Footer */
+        footer {
+            background: #fafafa;
+            padding: 60px 0 40px;
+            text-align: center;
+            border-top: 1px solid #eee;
+        }
+        
+        .footer-content {
+            display: flex;
+            justify-content: center;
+            gap: 3rem;
+            margin-bottom: 2rem;
+            flex-wrap: wrap;
+        }
+        
+        .footer-link {
+            color: #666;
+            text-decoration: none;
+            font-size: 0.9rem;
+            transition: color 0.3s ease;
+        }
+        
+        .footer-link:hover {
+            color: #000;
+        }
+        
+        .footer-bottom {
+            color: #999;
+            font-size: 0.85rem;
+        }
+        
+        /* Mobile Responsive */
+        @media (max-width: 768px) {
+            .nav-links {
+                display: none;
+            }
+            
+            .hero h1 {
+                font-size: 2.5rem;
+            }
+            
+            .hero .tagline {
+                font-size: 1.1rem;
+            }
+            
+            .section-title {
+                font-size: 2rem;
+            }
+            
+            .beta-cta h2 {
+                font-size: 2rem;
+            }
+            
+            .beta-form {
+                flex-direction: column;
+                align-items: center;
+            }
+            
+            .beta-input {
+                min-width: auto;
+                width: 100%;
+                max-width: 300px;
+            }
+            
+            .features-grid {
+                grid-template-columns: 1fr;
+                gap: 2rem;
+            }
+            
+            .feature-card {
+                padding: 2rem;
+            }
+        }
+        
+        /* Animations */
+        .fade-in {
+            opacity: 0;
+            transform: translateY(20px);
+            transition: opacity 0.6s ease, transform 0.6s ease;
+        }
+        
+        .fade-in.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        
+        /* Smooth scrolling */
+        html {
+            scroll-behavior: smooth;
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <nav class="container">
+            <a href="#" class="logo">
+                vice<span class="accent">linx</span>
+            </a>
+            <ul class="nav-links">
+                <li><a href="#features">Features</a></li>
+                <li><a href="#beta">Beta</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+            <a href="#beta" class="beta-button">Join Beta</a>
+        </nav>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="container">
+            <h1 class="fade-in">Ask, Advise, Connect</h1>
+            <p class="tagline fade-in">Your platform for more informed decisions through trusted community advice</p>
+            <a href="#beta" class="hero-cta fade-in">Join the Beta</a>
+            <p class="beta-note fade-in">Currently in TestFlight beta • Invitation only</p>
+        </div>
+    </section>
+
+    <!-- Features Section -->
+    <section id="features" class="features">
+        <div class="container">
+            <h2 class="section-title fade-in">Simple. Trusted. Effective.</h2>
+            <div class="features-grid">
+                <div class="feature-card fade-in">
+                    <span class="feature-icon">💭</span>
+                    <h3>Ask for Advice</h3>
+                    <p>Post questions and receive personalized advice from your community. From restaurant recommendations to life decisions.</p>
+                </div>
+                <div class="feature-card fade-in">
+                    <span class="feature-icon">💡</span>
+                    <h3>Share Knowledge</h3>
+                    <p>Help others with your experience. Build expertise in different categories and earn recognition for quality advice.</p>
+                </div>
+                <div class="feature-card fade-in">
+                    <span class="feature-icon">🤝</span>
+                    <h3>Build Trust</h3>
+                    <p>Connect with like-minded people. Create meaningful relationships based on mutual help and shared experiences.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Beta CTA Section -->
+    <section id="beta" class="beta-cta">
+        <div class="container">
+            <h2 class="fade-in">Be among the first</h2>
+            <p class="fade-in">ViceLinx is currently in beta. Join our waiting list to get early access and help shape the future of community advice.</p>
+            <a href="https://forms.gle/u5uBHjwTjA19FsMa9" class="beta-submit">Request Access</a>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer id="contact">
+        <div class="container">
+            <div class="footer-content">
+                <a href="mailto:support@vicelinx.com" class="footer-link">Contact</a>
+                <a href="https://legal.vicelinx.com/docs/privacy.html" class="footer-link">Privacy</a>
+                <a href="https://legal.vicelinx.com/docs/beta-eula.html" class="footer-link">Terms</a>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 ViceLinx • TestFlight Beta v1.0.5</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // Intersection Observer for fade-in animations
+            const observerOptions = {
+                threshold: 0.1,
+                rootMargin: '0px 0px -50px 0px'
+            };
+
+            const observer = new IntersectionObserver(function(entries) {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('visible');
+                    }
+                });
+            }, observerOptions);
+
+            // Observe all fade-in elements
+            document.querySelectorAll('.fade-in').forEach(el => {
+                observer.observe(el);
+            });
+
+            // Beta form submission
+            const betaForm = document.getElementById('betaForm');
+            const emailInput = document.getElementById('emailInput');
+            const successMessage = document.getElementById('successMessage');
+
+            betaForm.addEventListener('submit', function(e) {
+                e.preventDefault();
+                
+                const email = emailInput.value.trim();
+                if (email && email.includes('@')) {
+                    // Simulate form submission
+                    betaForm.style.display = 'none';
+                    successMessage.style.display = 'block';
+                    
+                    // You can add actual email submission logic here
+                    console.log('Beta signup:', email);
+                    
+                    // Optional: Send to your backend or email service
+                    // fetch('/api/beta-signup', {
+                    //     method: 'POST',
+                    //     headers: { 'Content-Type': 'application/json' },
+                    //     body: JSON.stringify({ email })
+                    // });
+                }
+            });
+
+            // Smooth scroll for anchor links
+            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+                anchor.addEventListener('click', function (e) {
+                    e.preventDefault();
+                    const target = document.querySelector(this.getAttribute('href'));
+                    if (target) {
+                        target.scrollIntoView({
+                            behavior: 'smooth',
+                            block: 'start'
+                        });
+                    }
+                });
+            });
+
+            // Header scroll effect
+            const header = document.querySelector('header');
+            window.addEventListener('scroll', () => {
+                if (window.scrollY > 50) {
+                    header.style.background = 'rgba(255, 255, 255, 0.95)';
+                    header.style.backdropFilter = 'blur(10px)';
+                } else {
+                    header.style.background = '#fff';
+                    header.style.backdropFilter = 'none';
+                }
+            });
+        });
+    </script>
+</body>
+</html>
