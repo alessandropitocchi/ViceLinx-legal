@@ -3,521 +3,185 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="icon" type="image/x-icon" href="favicon.ico">
     <title>NuvyLynx - Ask, Advise, Connect</title>
-    <meta name="description" content="Join the beta of NuvyLynx - your platform for trusted advice and meaningful connections.">
-    
-    <!-- Open Graph / Facebook -->
-    <meta property="og:type" content="website">
-    <meta property="og:url" content="https://vicelinx.app/">
-    <meta property="og:title" content="NuvyLynx - Ask, Advise, Connect">
-    <meta property="og:description" content="Join the beta of NuvyLynx - your platform for trusted advice and meaningful connections.">
-    
     <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-        
-        body {
-            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
-            line-height: 1.6;
-            color: #333;
-            background: #fff;
-        }
-        
-        .container {
-            max-width: 1100px;
-            margin: 0 auto;
-            padding: 0 20px;
-        }
-        
-        /* Header */
-        header {
-            background: #fff;
-            box-shadow: 0 1px 3px rgba(0,0,0,0.05);
-            position: fixed;
-            width: 100%;
-            top: 0;
-            z-index: 1000;
-        }
-        
-        nav {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding: 1rem 0;
-        }
-        
-        .logo {
-            display: flex;
-            align-items: center;
-            font-size: 2rem;
-            font-weight: 300;
-            color: #000;
-            text-decoration: none;
-            letter-spacing: 2px;
-        }
-
-        a.button {
-            text-decoration: none;
-            padding: 1px 6px;
-            border: 1px outset buttonborder;
-            border-radius: 3px;
-            color: buttontext;
-            background-color: buttonface;
-            text-decoration: none;
-        }
-                
-        .logo .accent {
-            font-weight: 700;
-        }
-        
-        .nav-links {
-            display: flex;
-            gap: 2rem;
-            list-style: none;
-        }
-        
-        .nav-links a {
-            text-decoration: none;
-            color: #666;
-            font-weight: 500;
-            transition: color 0.3s ease;
-        }
-        
-        .nav-links a:hover {
-            color: #000;
-        }
-        
-        .beta-button {
-            background: #000;
-            color: #fff;
-            padding: 10px 20px;
-            border-radius: 6px;
-            text-decoration: none;
-            font-weight: 500;
-            font-size: 0.9rem;
-            transition: all 0.3s ease;
-        }
-        
-        .beta-button:hover {
-            background: #333;
-            transform: translateY(-1px);
-        }
-        
-        /* Hero Section */
-        .hero {
-            padding: 140px 0 100px;
-            text-align: center;
-            background: #fff;
-        }
-        
-        .hero h1 {
-            font-size: 4rem;
-            font-weight: 300;
-            margin-bottom: 1.5rem;
-            color: #000;
-            letter-spacing: -1px;
-        }
-        
-        .hero .tagline {
-            font-size: 1.4rem;
-            margin-bottom: 3rem;
-            color: #666;
-            font-weight: 300;
-            max-width: 600px;
-            margin-left: auto;
-            margin-right: auto;
-        }
-        
-        .hero-cta {
-            background: #000;
-            color: #fff;
-            padding: 16px 32px;
-            border-radius: 6px;
-            text-decoration: none;
-            font-weight: 500;
-            font-size: 1.1rem;
-            display: inline-block;
-            transition: all 0.3s ease;
-        }
-        
-        .hero-cta:hover {
-            background: #333;
-            transform: translateY(-2px);
-        }
-        
-        .beta-note {
-            margin-top: 1.5rem;
-            color: #999;
-            font-size: 0.9rem;
-        }
-        
-        /* Features Section */
-        .features {
-            padding: 100px 0;
-            background: #fafafa;
-        }
-        
-        .section-title {
-            text-align: center;
-            font-size: 2.5rem;
-            font-weight: 300;
-            margin-bottom: 4rem;
-            color: #000;
-            letter-spacing: -1px;
-        }
-        
-        .features-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-            gap: 3rem;
-        }
-        
-        .feature-card {
-            background: #fff;
-            padding: 2.5rem;
-            border-radius: 8px;
-            text-align: center;
-            border: 1px solid #eee;
-            transition: all 0.3s ease;
-        }
-        
-        .feature-card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 10px 30px rgba(0,0,0,0.05);
-        }
-        
-        .feature-icon {
-            font-size: 3rem;
-            margin-bottom: 1.5rem;
-            display: block;
-        }
-        
-        .feature-card h3 {
-            font-size: 1.3rem;
-            margin-bottom: 1rem;
-            color: #000;
-            font-weight: 500;
-        }
-        
-        .feature-card p {
-            color: #666;
-            line-height: 1.6;
-            font-size: 0.95rem;
-        }
-        
-        /* Beta CTA Section */
-        .beta-cta {
-            padding: 100px 0;
-            background: #000;
-            color: #fff;
-            text-align: center;
-        }
-        
-        .beta-cta h2 {
-            font-size: 2.5rem;
-            font-weight: 300;
-            margin-bottom: 1rem;
-            letter-spacing: -1px;
-        }
-        
-        .beta-cta p {
-            font-size: 1.2rem;
-            margin-bottom: 2.5rem;
-            color: #ccc;
-            max-width: 600px;
-            margin-left: auto;
-            margin-right: auto;
-        }
-        
-        .beta-form {
-            max-width: 400px;
-            margin: 0 auto;
-            display: flex;
-            gap: 1rem;
-            flex-wrap: wrap;
-            justify-content: center;
-        }
-        
-        .beta-input {
-            flex: 1;
-            min-width: 250px;
-            padding: 14px 16px;
-            border: 1px solid #333;
-            border-radius: 6px;
-            background: #fff;
-            font-size: 1rem;
-            outline: none;
-        }
-        
-        .beta-submit {
-            background: #fff;
-            color: #000;
-            padding: 14px 24px;
-            border: none;
-            border-radius: 6px;
-            font-weight: 500;
-            cursor: pointer;
-            text-decoration: none;
-            transition: all 0.3s ease;
-        }
-        
-        .beta-submit:hover {
-            background: #f0f0f0;
-            transform: translateY(-1px);
-        }
-        
-        .beta-success {
-            background: #2a9d8f;
-            color: #fff;
-            padding: 1rem;
-            border-radius: 6px;
-            margin-top: 1rem;
-            display: none;
-        }
-        
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; line-height: 1.6; color: #333; overflow-x: hidden; }
+        /* Navigation */
+        .nav { position: fixed; top: 0; width: 100%; background: rgba(255, 255, 255, 0.95); backdrop-filter: blur(10px); z-index: 1000; padding: 1rem 0; transition: all 0.3s ease; }
+        .nav-container { max-width: 1200px; margin: 0 auto; display: flex; justify-content: space-between; align-items: center; padding: 0 2rem; }
+        .logo { font-size: 1.8rem; font-weight: 700; color: #000; text-decoration: none; }
+        .logo .light { font-weight: 300; }
+        .nav-links { display: flex; list-style: none; gap: 2rem; }
+        .nav-links a { text-decoration: none; color: #666; font-weight: 500; transition: color 0.3s ease; }
+        .nav-links a:hover { color: #000; }
+        .cta-nav { background: #000; color: white; padding: 0.75rem 1.5rem; border-radius: 50px; text-decoration: none; font-weight: 600; transition: all 0.3s ease; }
+        .cta-nav:hover { background: #333; transform: translateY(-2px); }
+        /* Hero */
+        .hero { min-height: 100vh; display: flex; align-items: center; background: linear-gradient(135deg, #f8f9fa 0%, #ffffff 100%); position: relative; overflow: hidden; }
+        .hero::before { content: ''; position: absolute; top: 0; left: 0; right: 0; bottom: 0; background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><defs><pattern id="grid" width="10" height="10" patternUnits="userSpaceOnUse"><path d="M 10 0 L 0 0 0 10" fill="none" stroke="%23f0f0f0" stroke-width="0.5"/></pattern></defs><rect width="100" height="100" fill="url(%23grid)"/></svg>'); opacity: 0.5; }
+        .hero-container { max-width: 1200px; margin: 0 auto; padding: 0 2rem; display: grid; grid-template-columns: 1fr 1fr; gap: 4rem; align-items: center; position: relative; z-index: 1; }
+        .hero-content { animation: slideInLeft 1s ease-out; }
+        .hero-title { font-size: 3.5rem; font-weight: 700; line-height: 1.1; margin-bottom: 1.5rem; background: linear-gradient(135deg, #000 0%, #333 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
+        .hero-subtitle { font-size: 1.25rem; color: #666; margin-bottom: 2rem; }
+        .hero-ctas { display: flex; gap: 1rem; flex-wrap: wrap; }
+        .btn-primary { background: #000; color: white; padding: 1rem 2rem; border: none; border-radius: 50px; font-size: 1.1rem; font-weight: 600; text-decoration: none; display: inline-flex; align-items: center; gap: 0.5rem; transition: all 0.3s ease; cursor: pointer; }
+        .btn-primary:hover { background: #333; transform: translateY(-3px); box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2); }
+        .hero-visual { animation: slideInRight 1s ease-out; }
+        .phone-mockup { width: 300px; height: 600px; background: #000; border-radius: 40px; padding: 10px; margin: 0 auto; box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3); overflow: hidden; }
+        .phone-screen { width: 100%; height: 100%; background: linear-gradient(135deg, #f8f9fa 0%, #ffffff 100%); border-radius: 30px; padding: 2rem 1.5rem; display: flex; flex-direction: column; justify-content: center; align-items: center; }
+        .app-logo { font-size: 2.5rem; font-weight: 700; margin-bottom: 1rem; }
+        .app-tagline { font-size: 0.9rem; color: #666; margin-bottom: 2rem; }
+        .mock-card { background: white; border-radius: 12px; padding: 1rem; margin-bottom: 1rem; box-shadow: 0 2px 10px rgba(0,0,0,0.1); width: 100%; }
+        .mock-question { font-size: 0.8rem; color: #333; font-weight: 500; margin-bottom: 0.5rem; }
+        .mock-meta { font-size: 0.7rem; color: #999; display: flex; justify-content: space-between; }
+        /* Features */
+        .features { padding: 6rem 0; background: white; }
+        .features-container { max-width: 1200px; margin: 0 auto; padding: 0 2rem; }
+        .section-title { text-align: center; font-size: 2.5rem; font-weight: 700; margin-bottom: 3rem; }
+        .features-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px,1fr)); gap: 3rem; }
+        .feature-card { text-align: center; padding: 2rem; border-radius: 20px; background: linear-gradient(135deg,#f8f9fa 0%,#ffffff 100%); border:1px solid #f0f0f0; transition: all 0.3s ease; }
+        .feature-card:hover { transform: translateY(-10px); box-shadow: 0 20px 40px rgba(0,0,0,0.1); }
+        .feature-icon { width:80px; height:80px; background:#000; border-radius:50%; display:flex; align-items:center; justify-content:center; margin:0 auto 1.5rem; font-size:2rem; color:white; }
+        .feature-title { font-size:1.5rem; font-weight:700; margin-bottom:1rem; }
+        .feature-description { color:#666; }
+        /* How it Works */
+        .how-it-works { padding:6rem 0; background:linear-gradient(135deg,#f8f9fa 0%,#ffffff 100%); }
+        .steps { display:grid; grid-template-columns: repeat(auto-fit,minmax(250px,1fr)); gap:2rem; }
+        .step { text-align:center; }
+        .step-number { width:60px; height:60px; background:#000; color:white; border-radius:50%; display:flex; align-items:center; justify-content:center; font-size:1.5rem; margin:0 auto 1.5rem; }
+        .step-title { font-size:1.25rem; font-weight:600; margin-bottom:1rem; }
+        .step-description { color:#666; }
+        /* Final CTA */
+        .final-cta { padding:6rem 0; background:linear-gradient(135deg,#000 0%,#333 100%); color:white; text-align:center; }
+        .final-cta-title { font-size:2.5rem; font-weight:700; margin-bottom:1rem; }
+        .final-cta-subtitle { font-size:1.25rem; opacity:0.8; margin-bottom:2rem; }
+        .download-buttons { display:flex; justify-content:center; }
+        .download-btn { background:white; color:#000; padding:1rem 2rem; border-radius:12px; text-decoration:none; font-weight:600; display:inline-flex; align-items:center; gap:0.75rem; transition: all 0.3s ease; }
+        .download-btn:hover { transform: translateY(-3px); box-shadow:0 10px 30px rgba(255,255,255,0.2); }
         /* Footer */
-        footer {
-            background: #fafafa;
-            padding: 60px 0 40px;
-            text-align: center;
-            border-top: 1px solid #eee;
-        }
-        
-        .footer-content {
-            display: flex;
-            justify-content: center;
-            gap: 3rem;
-            margin-bottom: 2rem;
-            flex-wrap: wrap;
-        }
-        
-        .footer-link {
-            color: #666;
-            text-decoration: none;
-            font-size: 0.9rem;
-            transition: color 0.3s ease;
-        }
-        
-        .footer-link:hover {
-            color: #000;
-        }
-        
-        .footer-bottom {
-            color: #999;
-            font-size: 0.85rem;
-        }
-        
-        /* Mobile Responsive */
-        @media (max-width: 768px) {
-            .nav-links {
-                display: none;
-            }
-            
-            .hero h1 {
-                font-size: 2.5rem;
-            }
-            
-            .hero .tagline {
-                font-size: 1.1rem;
-            }
-            
-            .section-title {
-                font-size: 2rem;
-            }
-            
-            .beta-cta h2 {
-                font-size: 2rem;
-            }
-            
-            .beta-form {
-                flex-direction: column;
-                align-items: center;
-            }
-            
-            .beta-input {
-                min-width: auto;
-                width: 100%;
-                max-width: 300px;
-            }
-            
-            .features-grid {
-                grid-template-columns: 1fr;
-                gap: 2rem;
-            }
-            
-            .feature-card {
-                padding: 2rem;
-            }
-        }
-        
+        .footer { background:#f8f9fa; padding:3rem 0; text-align:center; }
+        .footer-content { max-width:1200px; margin:0 auto; padding:0 2rem; }
+        .footer-logo { font-size:1.5rem; font-weight:700; margin-bottom:1rem; }
+        .footer-text { color:#666; margin-bottom:2rem; }
+        .footer-links { display:flex; justify-content:center; gap:2rem; flex-wrap:wrap; margin-bottom:2rem; }
+        .footer-links a { color:#666; text-decoration:none; font-weight:500; }
+        .footer-links a:hover { color:#000; }
+        .footer-bottom { border-top:1px solid #e0e0e0; padding-top:1rem; color:#999; font-size:0.9rem; }
         /* Animations */
-        .fade-in {
-            opacity: 0;
-            transform: translateY(20px);
-            transition: opacity 0.6s ease, transform 0.6s ease;
-        }
-        
-        .fade-in.visible {
-            opacity: 1;
-            transform: translateY(0);
-        }
-        
-        /* Smooth scrolling */
-        html {
-            scroll-behavior: smooth;
-        }
+        @keyframes slideInLeft { from { opacity:0; transform:translateX(-50px);} to { opacity:1; transform:translateX(0);} }
+        @keyframes slideInRight { from { opacity:0; transform:translateX(50px);} to { opacity:1; transform:translateX(0);} }
+        @keyframes fadeInUp { from { opacity:0; transform:translateY(30px);} to { opacity:1; transform:translateY(0);} }
+        .fade-in { animation: fadeInUp 0.8s ease-out forwards; }
+        @media (max-width:768px) { .nav-links { display:none; } .hero-container { grid-template-columns:1fr; text-align:center; } .hero-title { font-size:2.5rem; } .phone-mockup { width:250px; height:500px; } .features-grid { grid-template-columns:1fr; } .hero-ctas, .download-buttons { justify-content:center; } .download-btn { margin-top:1rem; }}
     </style>
 </head>
 <body>
-    <!-- Header -->
-    <header>
-        <nav class="container">
-            <a href="#" class="logo">
-                Nuvy<span class="accent">Lynx</span>
-            </a>
+    <!-- Navigation -->
+    <nav class="nav">
+        <div class="nav-container">
+            <a href="#" class="logo"><span class="light">Nuvy</span>Lynx</a>
             <ul class="nav-links">
                 <li><a href="#features">Features</a></li>
-                <li><a href="#beta">Beta</a></li>
-                <li><a href="#contact">Contact</a></li>
+                <li><a href="#how-it-works">How it Works</a></li>
+                <li><a href="#download">Register</a></li>
             </ul>
-            <a href="#beta" class="beta-button">Join Beta</a>
-        </nav>
-    </header>
-
-    <!-- Hero Section -->
-    <section class="hero">
-        <div class="container">
-            <h1 class="fade-in">Ask, Advise, Connect</h1>
-            <p class="tagline fade-in">Your platform for more informed decisions through trusted community advice</p>
-            <a href="#beta" class="hero-cta fade-in">Join the Beta</a>
-            <p class="beta-note fade-in">Currently in TestFlight beta • Invitation only</p>
+            <a href="#download" class="cta-nav">Register for the Beta!</a>
         </div>
-    </section>
+    </nav>
 
-    <!-- Features Section -->
-    <section id="features" class="features">
-        <div class="container">
-            <h2 class="section-title fade-in">Simple. Trusted. Effective.</h2>
-            <div class="features-grid">
-                <div class="feature-card fade-in">
-                    <span class="feature-icon">💭</span>
-                    <h3>Ask for Advice</h3>
-                    <p>Post questions and receive personalized advice from your community. From restaurant recommendations to life decisions.</p>
+    <!-- Hero -->
+    <section class="hero">
+        <div class="floating-elements">
+            <div class="floating-element"></div>
+            <div class="floating-element"></div>
+            <div class="floating-element"></div>
+        </div>
+        <div class="hero-container">
+            <div class="hero-content">
+                <h1 class="hero-title">Ask, Advise, Connect</h1>
+                <p class="hero-subtitle">Join the community where decisions become easier. Get personalized advice from friends and experts.</p>
+                <div class="hero-ctas">
+                    <a href="#download" class="btn-primary">📝 Register for the Beta!</a>
                 </div>
-                <div class="feature-card fade-in">
-                    <span class="feature-icon">💡</span>
-                    <h3>Share Knowledge</h3>
-                    <p>Help others with your experience. Build expertise in different categories and earn recognition for quality advice.</p>
-                </div>
-                <div class="feature-card fade-in">
-                    <span class="feature-icon">🤝</span>
-                    <h3>Build Trust</h3>
-                    <p>Connect with like-minded people. Create meaningful relationships based on mutual help and shared experiences.</p>
+            </div>
+            <div class="hero-visual">
+                <div class="phone-mockup">
+                    <div class="phone-screen">
+                        <div class="app-logo"><span class="light">Nuvy</span><span class="bold">Lynx</span></div>
+                        <p class="app-tagline">Your trusted advice network</p>
+                        <div class="mock-card">
+                            <div class="mock-question">Best restaurants in downtown?</div>
+                            <div class="mock-meta"><span>@sarah_m</span><span>5 advices</span></div>
+                        </div>
+                        <div class="mock-card">
+                            <div class="mock-question">Which laptop for programming?</div>
+                            <div class="mock-meta"><span>@dev_alex</span><span>12 advices</span></div>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Beta CTA Section -->
-    <section id="beta" class="beta-cta">
-        <div class="container">
-            <h2 class="fade-in">Be among the first</h2>
-            <p class="fade-in">NuvyLynx is currently in beta. Join our waiting list to get early access and help shape the future of community advice.</p>
-            <a href="https://forms.gle/u5uBHjwTjA19FsMa9" class="beta-submit">Request Access</a>
+    <!-- Features -->
+    <section class="features" id="features">
+        <div class="features-container">
+            <h2 class="section-title">Why Choose NuvyLynx?</h2>
+            <div class="features-grid">
+                <div class="feature-card fade-in"><div class="feature-icon">❓</div><h3 class="feature-title">Ask Questions</h3><p class="feature-description">Get personalized advice from community experts.</p></div>
+                <div class="feature-card fade-in"><div class="feature-icon">💡</div><h3 class="feature-title">Give Advice</h3><p class="feature-description">Share your knowledge and earn expertise points.</p></div>
+                <div class="feature-card fade-in"><div class="feature-icon">🤝</div><h3 class="feature-title">Build Connections</h3><p class="feature-description">Expand your network and trust circle.</p></div>
+                <div class="feature-card fade-in"><div class="feature-icon">🏆</div><h3 class="feature-title">Earn Recognition</h3><p class="feature-description">Get badges and helper levels.</p></div>
+                <div class="feature-card fade-in"><div class="feature-icon">🔒</div><h3 class="feature-title">Privacy Control</h3><p class="feature-description">Choose who sees your posts.</p></div>
+                <div class="feature-card fade-in"><div class="feature-icon">⚡</div><h3 class="feature-title">Daily Streaks</h3><p class="feature-description">Stay engaged with daily activity streaks.</p></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- How it Works -->
+    <section class="how-it-works" id="how-it-works">
+        <div class="features-container">
+            <h2 class="section-title">How It Works</h2>
+            <div class="steps">
+                <div class="step fade-in"><div class="step-number">1</div><h3 class="step-title">Create Your Profile</h3><p class="step-description">Sign up and set up your profile.</p></div>
+                <div class="step fade-in"><div class="step-number">2</div><h3 class="step-title">Ask or Answer</h3><p class="step-description">Post questions or give advice.</p></div>
+                <div class="step fade-in"><div class="step-number">3</div><h3 class="step-title">Connect & Grow</h3><p class="step-description">Build relationships and earn points.</p></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Final CTA -->
+    <section class="final-cta" id="download">
+        <div class="features-container">
+            <h2 class="final-cta-title">Ready to Make Better Decisions?</h2>
+            <p class="final-cta-subtitle">Join thousands making smarter choices with NuvyLynx</p>
+            <div class="download-buttons">
+                <a href="https://forms.gle/u5uBHjwTjA19FsMa9" class="download-btn">📝 Register for the Beta!</a>
+            </div>
         </div>
     </section>
 
     <!-- Footer -->
-    <footer id="contact">
-        <div class="container">
-            <div class="footer-content">
-                <a href="mailto:support@vicelinx.com" class="footer-link">Contact</a>
-                <a href="https://alessandropitocchi.github.io/ViceLinx-legal/docs/privacy.html" class="footer-link">Privacy</a>
-                <a href="https://alessandropitocchi.github.io/ViceLinx-legal/docs/beta-eula.html" class="footer-link">Terms</a>
+    <footer class="footer">
+        <div class="footer-content">
+            <div class="footer-logo"><span class="light">Nuvy</span><span class="bold">Lynx</span></div>
+            <p class="footer-text">Your trusted advice network.</p>
+            <div class="footer-links">
+                <a href="https://alessandropitocchi.github.io/ViceLinx-legal/docs/privacy.html">Privacy Policy</a><a href="https://alessandropitocchi.github.io/ViceLinx-legal/docs/beta-eula.html">Terms of Service</a><a href="mailto:support@vicelinx.com">Support</a><a href="mailto:marketing@vicelinx.com">Contact</a>
             </div>
-            <div class="footer-bottom">
-                <p>&copy; 2025 NuvyLynx • TestFlight Beta v1.0.5</p>
-            </div>
+            <div class="footer-bottom">&copy; 2025 NuvyLynx. All rights reserved.</div>
         </div>
     </footer>
 
     <script>
-        document.addEventListener('DOMContentLoaded', function() {
-            // Intersection Observer for fade-in animations
-            const observerOptions = {
-                threshold: 0.1,
-                rootMargin: '0px 0px -50px 0px'
-            };
-
-            const observer = new IntersectionObserver(function(entries) {
-                entries.forEach(entry => {
-                    if (entry.isIntersecting) {
-                        entry.target.classList.add('visible');
-                    }
-                });
-            }, observerOptions);
-
-            // Observe all fade-in elements
-            document.querySelectorAll('.fade-in').forEach(el => {
-                observer.observe(el);
-            });
-
-            // Beta form submission
-            const betaForm = document.getElementById('betaForm');
-            const emailInput = document.getElementById('emailInput');
-            const successMessage = document.getElementById('successMessage');
-
-            betaForm.addEventListener('submit', function(e) {
-                e.preventDefault();
-                
-                const email = emailInput.value.trim();
-                if (email && email.includes('@')) {
-                    // Simulate form submission
-                    betaForm.style.display = 'none';
-                    successMessage.style.display = 'block';
-                    
-                    // You can add actual email submission logic here
-                    console.log('Beta signup:', email);
-                    
-                    // Optional: Send to your backend or email service
-                    // fetch('/api/beta-signup', {
-                    //     method: 'POST',
-                    //     headers: { 'Content-Type': 'application/json' },
-                    //     body: JSON.stringify({ email })
-                    // });
-                }
-            });
-
-            // Smooth scroll for anchor links
-            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-                anchor.addEventListener('click', function (e) {
-                    e.preventDefault();
-                    const target = document.querySelector(this.getAttribute('href'));
-                    if (target) {
-                        target.scrollIntoView({
-                            behavior: 'smooth',
-                            block: 'start'
-                        });
-                    }
-                });
-            });
-
-            // Header scroll effect
-            const header = document.querySelector('header');
-            window.addEventListener('scroll', () => {
-                if (window.scrollY > 50) {
-                    header.style.background = 'rgba(255, 255, 255, 0.95)';
-                    header.style.backdropFilter = 'blur(10px)';
-                } else {
-                    header.style.background = '#fff';
-                    header.style.backdropFilter = 'none';
-                }
-            });
-        });
+        // Smooth scrolling
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => anchor.addEventListener('click', e => { e.preventDefault(); document.querySelector(anchor.getAttribute('href')).scrollIntoView({ behavior: 'smooth' }); }));
+        // Fade-in observer
+        const observer = new IntersectionObserver((entries) => entries.forEach(entry => { if(entry.isIntersecting){ entry.target.style.opacity='1'; entry.target.style.transform='translateY(0)'; }}),{ threshold:0.1, rootMargin:'0px 0px -50px 0px'});
+        document.querySelectorAll('.fade-in').forEach(el => { el.style.opacity='0'; el.style.transform='translateY(30px)'; el.style.transition='all 0.8s ease-out'; observer.observe(el); });
+        // Nav scroll
+        window.addEventListener('scroll', () => { const nav=document.querySelector('.nav'); if(window.scrollY>100){ nav.style.background='rgba(255,255,255,0.98)'; nav.style.boxShadow='0 2px 20px rgba(0,0,0,0.1)'; } else { nav.style.background='rgba(255,255,255,0.95)'; nav.style.boxShadow='none'; }});
     </script>
 </body>
 </html>
